@@ -1,4 +1,4 @@
-import { diff } from 'deep-diff';
+import deepDiff from 'deep-diff';
 
 /**
  * Returns true when two arrays of keys are equal
@@ -117,7 +117,7 @@ export default class DiffAccumulator {
     this.lhs = lhs;
     this.rhs = rhs;
 
-    diff(lhs, rhs, this.prefilter, this);
+    deepDiff.diff(lhs, rhs, this.prefilter, this);
     return this.changes;
   }
 
